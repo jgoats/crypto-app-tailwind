@@ -1,0 +1,36 @@
+.coin-data {
+   display : grid;
+   grid-template-columns : 1fr 50px 150px 1fr 1fr 1fr 1fr 2fr;
+   grid-template-rows : 100px;
+   align-items : center;
+   justify-content:center;
+   background-color : #000000;
+   border-bottom : 1px solid rgba(255,255,255,0.5);
+   padding-right : 10px;
+}
+.coin-icon {
+    width : 25px;
+   position : relative;
+   text-align : center;
+}
+.coin-logo-container {
+    display : flex;
+    justify-content: center;
+}
+.coin-number {
+    text-align : center;
+    justify-content: center;
+}
+.coin-data p {
+    display : flex;
+    text-align : left;
+    align-items : center;
+    font-size : 14px;
+}
+/*.coin-data:hover {
+    cursor: pointer;
+    background-color : rgb(21, 22, 29);
+}*/
+.coin-name {
+   color:aquamarine;
+}

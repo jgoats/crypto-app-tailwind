@@ -1,0 +1,16 @@
+.custom-label-bar {
+    display : flex;
+    align-items : center;
+    justify-content: space-around;
+    width : calc(100% - 100px);
+    position : relative;
+    top : -7px;
+    transform : translateX(100px);
+    color : white;
+    font-size : 12px;
+}
+.custom-label-bar div {
+    width : 14px;
+    display : flex;
+    justify-content: center;
+}

@@ -1,0 +1,14 @@
+.navigation-container {
+    height : 5vh;
+    min-height : 50px;
+    background-color : black;
+    display : grid;
+    grid-template-columns : 1fr 1fr 300px;
+    grid-template-rows : 50px;
+    grid-gap : 10px;
+    text-align : center;
+    section {
+        display : flex;
+        align-items : center;
+    }
+}

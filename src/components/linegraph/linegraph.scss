@@ -1,0 +1,55 @@
+.line-graph {
+    height : 300px;
+    min-width : 600px;
+    max-width : 100%;
+    background-color: white;
+    padding : 5px;
+    position : relative;
+}
+.graph-btn-container {
+    display : flex;
+    align-items : center;
+    justify-content: space-around;
+}
+.graph-btn {
+    color : white;
+    border : none;
+    background-color: black;
+    font-size : 14px;
+    padding : 3px 4px 3px 4px;
+    box-shadow : 0px 0px 5px black;
+}
+.graph-btn:hover {
+    cursor: pointer;
+}
+.btn-active {
+    background-color: #1f2828;
+}
+.custom-label {
+    display : flex;
+    color : white;
+    justify-content: space-around;
+    width : calc(100% - 50px);
+    transform : translateX(50px);
+    position : relative;
+    top : -7px;
+    font-size : 12px;
+    font-weight : 100;
+}
+@keyframes Rotate {
+    from {transform : rotate(0DEG)}
+    to {transform : rotate(360DEG)}
+}
+.active-spinner {
+    animation : Rotate 1s infinite;
+    position : absolute;
+    opacity : 1;
+    width : 100px;
+    height : 100px;
+}
+.default-spinner {
+    position : absolute;
+    opacity : 0;
+    width : 100px;
+    height : 100px;
+}
