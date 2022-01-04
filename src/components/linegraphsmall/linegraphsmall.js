@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Line } from "react-chartjs-2";
-import "./linegraphsmall.scss";
+import "./linegraphsmall.css";
 
 export default class LineGraphSmall extends Component {
     render() {

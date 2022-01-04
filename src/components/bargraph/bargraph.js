@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDom from "react-dom";
-import "./bargraph.scss";
+import "./bargraph.css";
 import { Bar } from "react-chartjs-2";
 
 

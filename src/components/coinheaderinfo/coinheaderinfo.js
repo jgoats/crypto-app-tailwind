@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import "./coinheaderinfo.scss";
+import "./coinheaderinfo.css";
 import LossArrow from "../../images/loss-arrow.svg";
 import ProfitArrow from "../../images/profit-arrow.svg";
 

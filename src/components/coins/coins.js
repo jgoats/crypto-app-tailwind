@@ -1,5 +1,5 @@
 import React from "react";
-import "./coins.scss";
+import "./coins.css";
 import CoinHeader from "../coinheader/coinheader.js";
 import CoinInfo from "../coininfo/coininfo.js";
 

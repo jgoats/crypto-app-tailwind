@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import "./currentdate.scss";
+import "./currentdate.css";
 
 export default class CurrentDate extends Component {
     render() {

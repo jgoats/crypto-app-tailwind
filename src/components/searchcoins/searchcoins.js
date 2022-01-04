@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import "./searchcoins.scss";
+import "./searchcoins.css";
 import EyeGlass from "../../images/eye-glass.svg";
 import Axios from "axios";
 

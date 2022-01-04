@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import "./portfoliopopup.scss";
+import "./portfoliopopup.css";
 
 export default class PortfolioPopup extends Component {
     render() {

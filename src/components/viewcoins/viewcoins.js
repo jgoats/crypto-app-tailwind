@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import "../../css/styles.css";
-import "./viewcoins.scss";
+import "./viewcoins.css";
 import { Link } from "react-router-dom";
 
 export default class ViewCoins extends Component {

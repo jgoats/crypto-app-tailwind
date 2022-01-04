@@ -1,5 +1,5 @@
 import React from 'react';
-import "./linegraph.scss";
+import "./linegraph.css";
 import { Line } from "react-chartjs-2";
 import ReactDom from "react-dom";
 

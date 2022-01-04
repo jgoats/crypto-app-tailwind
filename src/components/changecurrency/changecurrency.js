@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import "./changecurrency.scss";
+import "./changecurrency.css";
 import DropDownArrow from "../../images/drop-down-arrow.svg";
 import ReactDom from "react-dom";
 import Axios from "axios";

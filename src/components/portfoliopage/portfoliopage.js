@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import "./portfoliopage.scss";
+import "./portfoliopage.css";
 import Navigation from "../navigation/navigation.js";
 import PortfolioPopup from "../portfoliopopup/portfoliopopup.js";
 

@@ -1,5 +1,5 @@
 import React from "react";
-import "./overview.scss";
+import "./overview.css";
 import CoinPrice from "../coinprice/coinprice.js";
 import CurrentDate from "../currentdate/currentdate";
 import LineGraph from "../linegraph/linegraph.js";

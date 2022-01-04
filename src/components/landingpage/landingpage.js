@@ -1,5 +1,5 @@
 import React from "react";
-import "./landingpage.scss";
+import "./landingpage.css";
 import Navigation from "../navigation/navigation.js";
 import Overview from "../overview/overview.js";
 import Coins from "../coins/coins.js";

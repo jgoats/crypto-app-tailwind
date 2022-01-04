@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import "./coininfo.scss";
+import "./coininfo.css";
 import Axios from "axios";
 import LineGraphSmall from "../linegraphsmall/linegraphsmall.js";
 import ProfitIcon from "../../images/profit-arrow.svg";
@@ -67,7 +67,7 @@ export default class CoinInfo extends Component {
                     <p className="coin-number">{index + 1}</p>
                     <p className="coin-logo-container"><img className="coin-icon" src={coin.image} /></p>
                     <p className="coin-name">{coin.name}</p>
-                    <p>{coin.current_price }</p>
+                    <p>{coin.current_price}</p>
                     {coin.price_change_percentage_1h_in_currency.toPrecision(3) > 0 ?
                         <div style={{ display: "flex" }}><p style={{ color: "limegreen" }}>{coin.price_change_percentage_1h_in_currency.toPrecision(3) + " %"}</p><img style={{ width: "10px", marginLeft: "5px" }} src={ProfitIcon} /></div> :
                         <div style={{ display: "flex" }}><p style={{ color: "#FF002B" }}>{coin.price_change_percentage_1h_in_currency.toPrecision(3) + " %"}</p><img style={{ width: "10px", marginLeft: "5px" }} src={LossIcon} /></div>}

@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import "./navigation.scss";
+import "./navigation.css";
 import ChangeCurrency from "../changecurrency/changecurrency.js";
 import ViewCoins from "../viewcoins/viewcoins.js";
 import PortfolioBtn from "../portfolio/portfolio.js";

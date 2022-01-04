@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import "./coinprice.scss";
+import "./coinprice.css";
 
 export default class CoinPrice extends Component {
     render() {
