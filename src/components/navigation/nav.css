@@ -1,0 +1,53 @@
+.nav-container-main {
+    height : 3rem;
+}
+.nav-coins {
+    background-color : #2C2F36;
+    box-shadow : 0px 0px 2px white;
+}
+.nav-coins:hover {
+    box-shadow : 0px 0px 4px white;
+    background-color : rgb(65, 65, 65);
+    transition : 0.3s ease-in;
+    cursor: pointer;
+}
+
+.searchbar {
+   border-radius : 5px;
+   padding-left : 20px;
+   padding-right : 20px;
+   outline : none;
+   background-color : white;
+   color : black;
+   transition : 0.3s ease-in;
+}
+.searchbar-dark {
+    border-radius : 5px;
+    padding-left : 20px;
+    padding-right : 20px;
+    outline : none;
+    background-color : #1F2128;
+    color : white;
+    box-shadow : 0px 0px 4px white;
+    transition : 0.3s ease-in;
+}
+.currency-btn {
+    border: none;
+    padding : 2px 6px;
+    background-color : #1F2128;
+    color : white;
+    box-shadow : 0px 0px 2px white;
+}
+.currency-btn:hover {
+    box-shadow : 0px 0px 4px white;
+    background-color : rgb(65, 65, 65);
+    transition : 0.3s ease-in;
+    cursor: pointer;
+}
+.display-mode-container:hover {
+    cursor: pointer;
+}
+.display-mode {
+    width : 25px;
+    height : 25px;
+}
