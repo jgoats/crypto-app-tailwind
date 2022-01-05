@@ -20,12 +20,12 @@ export default class Hamburger extends Component {
     render() {
         return (
             <div>
-                <div onClick={this.handleHamburgerMenu} className="hamburger-container md:hidden flex flex-col items-center justify-center">
+                <div onClick={this.handleHamburgerMenu} className="hamburger-container sm:hidden flex flex-col items-center justify-center">
                     <div className="hamburger-item"></div>
                     <div className="hamburger-item"></div>
                     <div className="hamburger-item"></div>
                 </div>
-                <div className={`md:hidden flex flex-col items-center justify-around ${this.state.hamburgerContent}`}>
+                <div className={`sm:hidden flex flex-col items-center justify-around ${this.state.hamburgerContent}`}>
                     <div className="hamburgerContent-item text-white text-3xl">Coins</div>
                     <div className="hamburgerContent-item text-white text-3xl">Portfolio</div>
                 </div>

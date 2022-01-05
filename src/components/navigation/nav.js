@@ -41,8 +41,8 @@ export default class Navigation extends React.Component {
     render() {
         return (
             <div>
-                <div className="md:gap-12 gap-3 nav-container-main w-full bg-black flex flex-row items-center">
-                    <div className="md:flex hidden gap-4 w-full justify-start">
+                <div className="sm:gap-12 gap-3 nav-container-main w-full bg-black flex flex-row items-center">
+                    <div className="sm:flex hidden gap-4 w-full justify-start">
                         <div className="nav-coins px-3 py-1 rounded-md text-white ml-12">Coins</div>
                         <div className="px-3 py-1 rounded-md text-white">Portfolio</div>
                     </div>

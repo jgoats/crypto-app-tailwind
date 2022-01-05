@@ -518,6 +518,20 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
+@media (min-width: 640px) {
+  .sm\:flex {
+    display: flex;
+  }
+
+  .sm\:hidden {
+    display: none;
+  }
+
+  .sm\:gap-12 {
+    gap: 3rem;
+  }
+}
+
 @media (min-width: 768px) {
   .md\:flex {
     display: flex;
