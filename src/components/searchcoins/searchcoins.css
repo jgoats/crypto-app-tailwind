@@ -1,0 +1,79 @@
+.search-coin-container {
+    align-self : center;
+    flex-direction : row;
+    display : flex;
+   justify-content: center;
+   position : relative;
+   min-width : 100px;
+   max-width : 300px;
+}
+.search-coin-form {
+    width : 100%;
+    height : 30px;
+}
+.search-coin-input {
+    background-color : black;
+    border : none;
+    color : white;
+    font-size : 1em;
+    padding : 3px 10px;
+    box-shadow : 0px 0px 2px white;
+    width : 100%;
+    border-radius : 20px;
+}
+.search-coin-input::after{
+    content: "\00d7";
+    color : white;
+}
+.search-coin-input:focus {
+    color : white;
+    outline : none;
+}
+.coin-results {
+    display : block;
+    width : 100%;
+    position : absolute;
+    z-index : 10;
+    top : 35px;
+    background-color : #18181b;
+    opacity : 0.9;
+    border : 2px solid #18181b;
+    border-radius : 5px;
+}
+.coin-results-item {
+    background-color : black;
+    color : white;
+    padding : 2px;
+    border : none;
+}
+.coin-results-btn {
+    color : white;
+    border : none;
+    background-color : black;
+    font-size : 19px;
+    width : 100%;
+}
+.coin-results-btn:hover {
+    background-color : #1f2828;
+    cursor: pointer;
+}
+.searchcoin-spinner-default {
+    margin-right : 2px;
+    width : 30px;
+    height : 30px;
+    float : left;
+    opacity : 0;
+    position : absolute;
+}
+@keyframes searchcoinActive{
+    from{transform : rotate(0DEG)}
+    to{transform : rotate(360DEG)}
+}
+.searchcoin-spinner-active {
+    margin-right : 2px;
+    width : 30px;
+    height : 30px;
+    float : left;
+    opacity : 1;
+    animation : searchcoinActive 1s infinite;
+}

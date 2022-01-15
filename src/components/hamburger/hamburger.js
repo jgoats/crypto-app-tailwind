@@ -19,7 +19,7 @@ export default class Hamburger extends Component {
     }
     render() {
         return (
-            <div>
+            <div className="">
                 <div onClick={this.handleHamburgerMenu} className="hamburger-container sm:hidden flex flex-col items-center justify-center">
                     <div className="hamburger-item"></div>
                     <div className="hamburger-item"></div>

@@ -1,0 +1,100 @@
+.line-graph-main-container {
+    height : 350px;
+    position : relative;
+}
+.line-graph {
+    display : flex;
+    height : 250px;
+    align-items : center;
+    justify-content : center;
+    flex-direction : column;
+    position : relative;
+}
+.graph-btn-container {
+    display : flex;
+    align-items : center;
+    justify-content: center;
+    width : calc(100% - 50px);
+    position : relative;
+    transform : translateX(50px) translateY(15px);
+}
+.graph-btn {
+    font-weight : bold;
+    display : flex;
+    align-items : center;
+}
+@keyframes btnSelect {
+    from {
+        color : black;
+        display : flex;
+        align-items : center;
+        padding : 5px;
+        border-radius : 2px;
+        opacity : 0.3;
+    }
+    to {
+    color : black;
+    padding : 5px;
+    border-radius : 2px;
+    display : flex;
+    align-items : center;
+    opacity : 1;
+    }
+}
+.btn-active {
+    animation : btnSelect 0.5s 1;
+    display : flex;
+    align-items : center;
+    color : black;
+    background-color : rgb(121, 110, 190);
+    padding : 5px;
+    border-radius : 2px;
+    opacity : 1;
+}
+
+.custom-label {
+    position : relative;
+    bottom : 0;
+    font-size : 12px;
+    width : calc(100% - 50px);
+    z-index : 0;
+    transform : translateX(50px) translateY(-5px);
+}
+@keyframes Rotate {
+    from {transform : rotate(0DEG)}
+    to {transform : rotate(360DEG)}
+}
+.active-spinner {
+    animation : Rotate 1s infinite;
+    position : absolute;
+    opacity : 1;
+    width : 100px;
+    height : 100px;
+    left : calc(50% - 25px);
+    top : 75px;
+    z-index : 10;
+}
+.default-spinner {
+    position : absolute;
+    opacity : 0;
+    width : 100px;
+    height : 100px;
+    left : calc(50% - 25px);
+    top : 75px;
+    z-index : 10;
+}
+
+@media screen and (max-width : 640px) {
+    .custom-label {
+        display : none;
+    }
+    .graph-btn-container {
+        display : flex;
+        align-items : center;
+        justify-content: center;
+        width : 100%;
+        position : relative;
+        transform : translateX(0px) translateY(15px);
+    }
+
+}

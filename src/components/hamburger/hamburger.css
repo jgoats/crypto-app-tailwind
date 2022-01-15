@@ -1,9 +1,10 @@
 .hamburger-container {
     width : 30px;
     height : 30px;
-    position : absolute;
-    z-index : 10;
+    position : fixed;
+    z-index : 15;
     margin-left : 1rem;
+    margin-right : 1rem;
     top : 0;
     transform : translateY(9px)
 }
@@ -19,9 +20,9 @@
 }
 .hamburgerContent {
     width : 100%;
-    height : calc(100% - 3rem);
-    position : absolute;
-    z-index : 0;
+    height : 100%;
+    position : fixed;
+    z-index : 10;
     transform : translateX(-100%);
     transition : 0.3s ease-in;
 }
@@ -31,11 +32,11 @@
 }
 .hamburgerContent-active {
     width : 100%;
-    height : calc(100% - 3rem);
-    position : absolute;
+    height : 100%;
+    position : fixed;
     background-color : black;
     filter : opacity(0.95);
-    z-index : 0;
+    z-index : 10;
     animation : slide 0.3s 1;
     transition : 0.3s ease-in;
     transform : translateX(0%);

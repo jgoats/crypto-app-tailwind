@@ -1,0 +1,13 @@
+.bargraph-main-container {
+    height : 350px;
+}
+
+.bargraph {
+    height : 250px;
+    position : relative;
+    display : flex;
+    flex-direction : column;
+    align-items : center;
+    justify-content : center;
+    position : relative;
+}

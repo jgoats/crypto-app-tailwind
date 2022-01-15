@@ -1,0 +1,26 @@
+.coin-header-container{
+padding : 5px 20px;
+border-radius : 3px 3px 0px 0px;
+display : grid;
+grid-template-columns : 1fr 1fr 1fr 1fr 1fr 1fr 1fr 150px;
+align-items : center;
+}
+.coin-header-item {
+
+}
+
+@media screen and (max-width : 767px) {
+    .coin-header-container {
+        display : grid;
+        grid-template-columns : 60px 120px 75px 1fr 1fr 1fr;
+     }
+     .coin-header-logo {
+        display : none;
+     }
+ }
+ @media screen and (max-width : 638px) {
+    .coin-header-container {
+       display : grid;
+       grid-template-columns : 60px 1fr 1fr 1fr;
+     }
+ }

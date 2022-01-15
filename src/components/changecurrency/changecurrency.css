@@ -1,0 +1,86 @@
+
+.currency-type {
+    font-family : poppins;
+    font-size : 1em;
+    color : white;
+}
+.currency-btn-container:hover {
+    cursor: pointer;
+    transition : 0.3s ease-in;
+    background-color :rgb(45, 56, 56);
+}
+.currency-drop-down-arrow {
+    width : 10px;
+    margin-left : 5px;
+}
+.currency-display {
+    width : 175px;
+    text-align : center;
+}
+
+@keyframes handle {
+    from {opacity : 0}
+    to {opacity : 0.9}
+}
+.currency-popup {
+    position : absolute;
+    z-index : 10;
+    background-color : black;
+    display : none;
+    color : white;
+    width : 50%;
+    height : 400px;
+    top : calc(50% - 200px);
+    left : 50%;
+    transform : translateX(-50%);
+}
+.currency-popup-active {
+    display : flex;
+    align-items : center;
+    justify-content : center;
+    flex-wrap : wrap;
+    position : absolute;
+    z-index : 10;
+    background-color : #18181b;
+    opacity : 1;
+    color : white;
+    width : 80vw;
+    height : 80vh;
+    border-radius : 10px;
+    overflow-y : scroll;
+    padding : 30px;
+    left : 50%;
+    top : 50%;
+    transform : translateX(-50%) translateY(3rem);
+    animation : handle 0.4s ease-in;
+}
+
+
+.currency-btn {
+    color : white;
+    margin : 5px;
+    border-radius : 3px;
+}
+.currency-btn:hover {
+    background-color : rgb(53, 53, 53);
+}
+.currency-popup-active::-webkit-scrollbar {
+    width: 15px;
+  }
+  
+  /* Track */
+  .currency-popup-active::-webkit-scrollbar-track {
+    background-color : #18181b;
+    border-radius : 10px;
+  }
+  
+  /* Handle */
+  .currency-popup-active::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius : 10px;
+  }
+  
+  /* Handle on hover */
+  .currency-popup-active::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
