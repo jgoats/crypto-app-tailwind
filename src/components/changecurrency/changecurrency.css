@@ -4,10 +4,14 @@
     font-size : 1em;
     color : white;
 }
+.currency-btn-container {
+    background-color : #2c2f36;
+}
 .currency-btn-container:hover {
     cursor: pointer;
     transition : 0.3s ease-in;
     background-color :rgb(45, 56, 56);
+    box-shadow : 0px 0px 2px white;
 }
 .currency-drop-down-arrow {
     width : 10px;

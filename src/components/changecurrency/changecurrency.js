@@ -48,7 +48,7 @@ export default class ChangeCurrency extends Component {
             <div className="flex items-center justify-center gap-2">
                 <div className="md:block hidden text-white currency-display">{this.props.currency}</div>
                 <div ref={this.currency} onClick={(e) => this.handleToggle(e)} className="">
-                    <div className="currency-btn-container flex items-center justify-center px-3 py-1 bg-zinc-800 rounded-md border-2 border-green-300">
+                    <div className="currency-btn-container flex items-center justify-center px-3 py-1 bg-zinc-800 rounded-md">
                         <div className="currency-type">{this.props.currencyabbr}</div>
                         <img className="currency-drop-down-arrow" src={DropDownArrow} />
                     </div>
