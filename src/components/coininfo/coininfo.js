@@ -77,7 +77,7 @@ export default class CoinInfo extends Component {
                     {coin.price_change_percentage_7d_in_currency.toPrecision(3) > 0 ?
                         <div style={{ display: "flex" }}><p style={{ color: "limegreen", }}>{coin.price_change_percentage_7d_in_currency.toPrecision(3) + " %"}</p><img style={{ width: "10px", marginLeft: "5px" }} src={ProfitIcon} /></div> :
                         <div style={{ display: "flex" }}><p style={{ color: "#FF002B", }}>{coin.price_change_percentage_7d_in_currency.toPrecision(3) + " %"}</p><img style={{ width: "10px", marginLeft: "5px" }} src={LossIcon} /></div>}
-                    <div className="bg-zinc-900 rounded-md md:block hidden">
+                    <div className="small-linegraph-container md:block hidden">
                         <LineGraphSmall price={coin.sparkline_in_7d.price}
                             color={coin.sparkline_in_7d.price[0] < coin.sparkline_in_7d.price[coin.sparkline_in_7d.price.length - 1] ?
                                 "limegreen" : "#FF002B"} />

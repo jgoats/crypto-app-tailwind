@@ -14,7 +14,7 @@ export default class LineGraphSmall extends Component {
                 datasets: [
                     {
                         data: this.props.price,
-                        borderWidth: 1,
+                        borderWidth: 2,
                         fill: false,
                         pointRadius: 0,
                         borderColor: this.props.color

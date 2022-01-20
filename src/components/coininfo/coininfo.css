@@ -1,9 +1,12 @@
 .coin-data {
     display : grid;
-    grid-template-columns : 1fr 1fr 1fr 1fr 1fr 1fr 1fr 150px;
+    grid-template-columns : 1fr 1fr 1fr 1fr 1fr 1fr 1fr 200px;
     grid-template-rows : 100px;
     align-items : center;
     padding : 20px;
+ }
+ .small-linegraph-container {
+     width : 200px;
  }
  .coin-data:nth-child(2n+1) {
      background-color : rgb(235, 228, 228);
