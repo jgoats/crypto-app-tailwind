@@ -16,8 +16,8 @@ export default class Overview extends Component {
     render() {
         return (
             <div style={{ backgroundColor: `${this.props.bgdisplay}`, color: `${this.props.textdisplay}` }}
-                className={`overview-container sm:p-10 p-2 w-full relative`}>
-                <h1 className={`text-3xl font-light p-10`}>current selected crypto currency</h1>
+                className={`overview-container md:p-10 p-2 w-full relative`}>
+                <h1 className={`overview-heading text-3xl font-light`}>Overview</h1>
                 <div className="flex lg:flex-row flex-col items-center justify-center gap-20">
                     <MainGraph
                         handleDuration={this.props.handleDuration}
@@ -31,9 +31,7 @@ export default class Overview extends Component {
                         textdisplay={this.props.textdisplay} />
                     <BarGraph
                         coin={this.props.coin}
-                        totalvolumn={this.props.totalvolumn}
-                        bargraphborder={this.props.bargraphborder}
-                        bargraphcolor={this.props.bargraphcolor} />
+                        totalvolumn={this.props.totalvolumn} />
                 </div>
                 <h1 className={`coins-main-header text-3xl font-light p-10 mb-10`}>Top 20 Crypro Currencies (based on market cap)</h1>
             </div>

@@ -2,6 +2,11 @@
     overflow-x : hidden;
     overflow-y : hidden;
 }
+.overview-heading {
+    margin-top : 3rem;
+    padding : 30px;
+    text-align : center;
+}
 
 /*@media screen and (max-width : 767px) {
     .coins-main-header {
