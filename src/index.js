@@ -3,7 +3,6 @@ import ReactDom from "react-dom";
 import Axios from "axios";
 import "../src/css/styles.css";
 import Navigation from "../src/components/navigation/nav.js";
-import Hamburger from "../src/components/hamburger/hamburger.js";
 import Overview from "../src/components/overview/overview.js";
 import Coins from "../src/components/coins/coins.js";
 
@@ -41,16 +40,33 @@ export default class App extends React.Component {
             currentcoinprice: "",
             handleSpinner: "",
             wascurrencychanged: false,
-            bargraphborder: ["rgb(90,183,75)"],
-            bargraphcolor: ["rgba(90,183,75,0.6)"],
             bgdisplay: "white",
             textdisplay: "black"
         }
+        this.intersectionCallback = this.intersectionCallback.bind(this);
         this.handleDuration = this.handleDuration.bind(this);
         this.changeCurrency = this.changeCurrency.bind(this);
         this.setCurrency = this.setCurrency.bind(this);
         this.changeCoin = this.changeCoin.bind(this);
         this.changeDisplay = this.changeDisplay.bind(this);
+    }
+    intersectionCallback(entries) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting && entry.target.className == "coin-header-container") {
+                window.onscroll = function () {
+                    if (document.getElementsByClassName("coin-header-container")[0].getBoundingClientRect().top <= 50) {
+                        document.getElementsByClassName("coin-header-container")[0].style.position = "fixed";
+                        document.getElementsByClassName("coin-header-container")[0].style.top = "3rem";
+                        document.getElementsByClassName("coin-header-container")[0].style.width = "100%";
+                    }
+                }
+            }
+            else {
+                document.getElementsByClassName("coin-header-container")[0].style.position = "static";
+
+                console.log(entry.target.className);
+            }
+        });
     }
 
     changeCurrency(item) {
@@ -214,8 +230,10 @@ export default class App extends React.Component {
                 }).then((result) => {
                     let prices = result.data.prices.filter((price, index) => {
                         if (index % 3 == 0) {
-                            return Math.floor(price[1])
+                            return price;
                         }
+                    }).map((price) => {
+                        return Math.floor(price[1]);
                     })
                     this.setState({
                         historicalPrices: prices,
@@ -321,10 +339,11 @@ export default class App extends React.Component {
                 }).then((result) => {
                     let prices = result.data.prices.filter((price, index) => {
                         if (index % 5 == 0) {
-                            return Math.floor(price[1])
+                            return price;
                         }
+                    }).map((price) => {
+                        return Math.floor(price[1]);
                     })
-                    console.log(prices);
                     this.setState({
                         historicalPrices: prices,
                         dates: prices,
@@ -509,7 +528,6 @@ export default class App extends React.Component {
                     currencyabbr={this.state.currencyabbr}
                     coins={this.state.coins}
                     changeDisplay={this.changeDisplay} />
-                <Hamburger />
                 <Overview
                     handleDuration={this.handleDuration}
                     price={this.state.historicalPrices}
@@ -519,16 +537,16 @@ export default class App extends React.Component {
                     totalvolumn={this.state.totalvolumn}
                     coin={this.state.coin}
                     currentcoinprice={this.state.currentcoinprice}
-                    bargraphborder={this.state.bargraphborder}
-                    bargraphcolor={this.state.bargraphcolor}
                     bgdisplay={this.state.bgdisplay}
-                    textdisplay={this.state.textdisplay} />
+                    textdisplay={this.state.textdisplay}
+                    intersectionCallback={this.intersectionCallback} />
                 <Coins
                     wascurrencychanged={this.state.wascurrencychanged}
                     setCurrency={this.state.setCurrency}
                     currencyabbr={this.state.currencyabbr}
                     bgdisplay={this.state.bgdisplay}
-                    textdisplay={this.state.textdisplay} />
+                    textdisplay={this.state.textdisplay}
+                    intersectionCallback={this.intersectionCallback} />
             </div>
         )
     }
