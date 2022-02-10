@@ -3,8 +3,6 @@ import "./overview.css";
 import "../../css/styles.css";
 import MainGraph from "../maingraph/maingraph.js";
 import BarGraph from "../bargraph/bargraph.js";
-import CoinPrice from "../coinprice/coinprice.js";
-import CurrentDate from "../currentdate/currentdate.js";
 
 export default class Overview extends Component {
     constructor() {
@@ -12,12 +10,23 @@ export default class Overview extends Component {
         this.state = {
             graphColor: ["rgb(25, 150, 64)", "rgba(25, 150, 64, 0.2)"],
         }
+        this.cryptoheader = React.createRef();
+    }
+    componentDidMount() {
+        let options = {
+            root: null,
+            rootMargin: "0px",
+            threshold: 1
+        }
+        let observer = new IntersectionObserver(this.props.intersectionCallback, options);
+        let target = this.cryptoheader.current;
+        observer.observe(target);
     }
     render() {
         return (
             <div style={{ backgroundColor: `${this.props.bgdisplay}`, color: `${this.props.textdisplay}` }}
                 className={`overview-container md:p-10 p-2 w-full relative`}>
-                <h1 className={`overview-heading text-3xl font-light`}>Overview</h1>
+                <h1 className={`overview-heading`}>Overview</h1>
                 <div className="flex lg:flex-row flex-col items-center justify-center gap-20">
                     <MainGraph
                         handleDuration={this.props.handleDuration}
@@ -33,7 +42,7 @@ export default class Overview extends Component {
                         coin={this.props.coin}
                         totalvolumn={this.props.totalvolumn} />
                 </div>
-                <h1 className={`coins-main-header text-3xl font-light p-10 mb-10`}>Top 20 Crypro Currencies (based on market cap)</h1>
+                <h1 ref={this.cryptoheader} className={`overview-heading`}>Top 20 Crypro Currencies</h1>
             </div>
         )
     }
