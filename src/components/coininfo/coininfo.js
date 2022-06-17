@@ -62,28 +62,29 @@ export default class CoinInfo extends Component {
     }
     render() {
         return (
-            this.state.coins.map((coin, index) =>
-                <div style={{ backgroundColor: `${this.props.bgdisplay}`, color: `${this.props.textdisplay}` }} key={index} className="coin-data p-3 flex items-center">
-                    <p className="coin-number">{index + 1}</p>
-                    <p className="coin-logo-container"><img className="coin-icon" src={coin.image} /></p>
-                    <p className="coin-name">{coin.name}</p>
-                    <p className="coin-price">{coin.current_price.toFixed(2)}</p>
-                    <div className="sm:block hidden">{coin.price_change_percentage_1h_in_currency.toPrecision(3) > 0 ?
-                        <div style={{ display: "flex" }}><p style={{ color: "limegreen" }}>{coin.price_change_percentage_1h_in_currency.toPrecision(3) + " %"}</p><img style={{ width: "10px", marginLeft: "5px" }} src={ProfitIcon} /></div> :
-                        <div style={{ display: "flex" }}><p style={{ color: "#FF002B" }}>{coin.price_change_percentage_1h_in_currency.toPrecision(3) + " %"}</p><img style={{ width: "10px", marginLeft: "5px" }} src={LossIcon} /></div>}</div>
-                    <div className="sm:block hidden">{coin.price_change_percentage_24h_in_currency.toPrecision(3) > 0 ?
-                        <div style={{ display: "flex" }}><p style={{ color: "limegreen" }}>{coin.price_change_percentage_24h_in_currency.toPrecision(3) + " %"}</p><img style={{ width: "10px", marginLeft: "5px" }} src={ProfitIcon} /></div> :
-                        <div style={{ display: "flex" }}><p style={{ color: "#FF002B", }}>{coin.price_change_percentage_24h_in_currency.toPrecision(3) + " %"}</p><img style={{ width: "10px", marginLeft: "5px" }} src={LossIcon} /></div>}</div>
-                    {coin.price_change_percentage_7d_in_currency.toPrecision(3) > 0 ?
-                        <div style={{ display: "flex" }}><p style={{ color: "limegreen", }}>{coin.price_change_percentage_7d_in_currency.toPrecision(3) + " %"}</p><img style={{ width: "10px", marginLeft: "5px" }} src={ProfitIcon} /></div> :
-                        <div style={{ display: "flex" }}><p style={{ color: "#FF002B", }}>{coin.price_change_percentage_7d_in_currency.toPrecision(3) + " %"}</p><img style={{ width: "10px", marginLeft: "5px" }} src={LossIcon} /></div>}
-                    <div className="small-linegraph-container md:block hidden">
-                        <LineGraphSmall price={coin.sparkline_in_7d.price}
-                            color={coin.sparkline_in_7d.price[0] < coin.sparkline_in_7d.price[coin.sparkline_in_7d.price.length - 1] ?
-                                "limegreen" : "#FF002B"} />
+            <div style={{ backgroundColor: `${this.props.bgdisplay}` }} className="coin-data-container w-full h-full">{
+                this.state.coins.map((coin, index) =>
+                    <div style={{ color: `${this.props.textdisplay}` }} key={index} className="coin-data  flex items-center">
+                        <p className="coin-number">{index + 1}</p>
+                        <p className="coin-item coin-logo-container"><img className="coin-icon" src={coin.image} /></p>
+                        <p className="coin-item coin-name">{coin.name}</p>
+                        <p className="coin-item coin-price">{coin.current_price.toFixed(2)}</p>
+                        <div className="coin-item coin-price-change sm:block hidden">{coin.price_change_percentage_1h_in_currency.toPrecision(3) > 0 ?
+                            <div style={{ display: "flex" }}><p style={{ color: "limegreen" }}>{coin.price_change_percentage_1h_in_currency.toPrecision(3) + " %"}</p><img style={{ width: "10px", marginLeft: "5px" }} src={ProfitIcon} /></div> :
+                            <div style={{ display: "flex" }}><p style={{ color: "#FF002B" }}>{coin.price_change_percentage_1h_in_currency.toPrecision(3) + " %"}</p><img style={{ width: "10px", marginLeft: "5px" }} src={LossIcon} /></div>}</div>
+                        <div className="coin-item coin-price-change sm:block hidden">{coin.price_change_percentage_24h_in_currency.toPrecision(3) > 0 ?
+                            <div style={{ display: "flex" }}><p style={{ color: "limegreen" }}>{coin.price_change_percentage_24h_in_currency.toPrecision(3) + " %"}</p><img style={{ width: "10px", marginLeft: "5px" }} src={ProfitIcon} /></div> :
+                            <div style={{ display: "flex" }}><p style={{ color: "#FF002B", }}>{coin.price_change_percentage_24h_in_currency.toPrecision(3) + " %"}</p><img style={{ width: "10px", marginLeft: "5px" }} src={LossIcon} /></div>}</div>
+                        <div className="coin-item flex items-center justify-center">{coin.price_change_percentage_7d_in_currency.toPrecision(3) > 0 ?
+                            <div style={{ display: "flex" }}><p style={{ color: "limegreen", }}>{coin.price_change_percentage_7d_in_currency.toPrecision(3) + " %"}</p><img style={{ width: "10px", marginLeft: "5px" }} src={ProfitIcon} /></div> :
+                            <div style={{ display: "flex" }}><p style={{ color: "#FF002B", }}>{coin.price_change_percentage_7d_in_currency.toPrecision(3) + " %"}</p><img style={{ width: "10px", marginLeft: "5px" }} src={LossIcon} /></div>}</div>
+                        <div className="small-linegraph-container md:block hidden">
+                            <LineGraphSmall price={coin.sparkline_in_7d.price}
+                                color={coin.sparkline_in_7d.price[0] < coin.sparkline_in_7d.price[coin.sparkline_in_7d.price.length - 1] ?
+                                    "limegreen" : "#FF002B"} />
+                        </div>
                     </div>
-                </div>
-            )
+                )}</div>
 
         )
     }
