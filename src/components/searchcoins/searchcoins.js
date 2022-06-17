@@ -27,21 +27,26 @@ export default class SearchCoins extends Component {
         this.setState({
             value: input
         })
-        if (input.length == 1) {
+        if (input.length >= 1) {
             this.setState({
                 spinnerClass: "searchcoin-spinner-active"
             })
-            let url = `https://crypto-app-server.herokuapp.com/coins/${input}`
+            let url = `https://cryptocurrencysearch.herokuapp.com/coins/`
             Axios({
-                method: "get",
+                method: "post",
                 headers: {
-                    "Content-Type": "application/json"
+                    "Content-Type": "application/json",
+                    "Access-Control-Allow-Origin": "https://www.justinssoftware.com/"
                 },
-                url: url
+                url: url,
+                data: {
+                    crypto: e.target.value
+                }
             }).then((result) => {
+                console.log(result);
                 let names = [];
-                result.data.map((item) => {
-                    names.push(item.id);
+                result.data.result.map((item) => {
+                    names.push(item[1].id);
                 })
                 this.setState({
                     coins: names,
@@ -75,7 +80,7 @@ export default class SearchCoins extends Component {
                 <svg version="1.1" x="0" y="0" viewBox="0 0 24 24" className={`${this.state.spinnerClass} w-5`}><g><g id="Layer_114" data-name="Layer 114">
                     <path d="m21 12a9 9 0 1 1 -3.84-7.36l-.11-.32a1 1 0 0 1 1.95-.64l1 3a1 1 0 0 1 -.14.9 1 1 0 0 1 -.86.42h-3a1 1 0 0 1 -1-1 1 1 0 0 1.71-.94 7 7 0 1 0 3.29 5.94 1 1 0 0 1 2 0z" fill="whitesmoke" data-original="#000000" /></g></g></svg>
                 <form className="search-coin-form">
-                    <input value={this.state.value} onChange={(e) => this.handleSearch(e)} className="search-coin-input" type="search" placeholder="search for crypto..." />
+                    <input value={this.state.value} onChange={(e) => this.handleSearch(e)} className="search-coin-input" type="search" placeholder="search crypto..." />
                 </form>
                 <div className="coin-results">
 
